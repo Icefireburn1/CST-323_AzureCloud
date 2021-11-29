@@ -10,6 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: windows-latest
   laravel:
     name: Laravel (PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }})
     runs-on: ${{ matrix.operating-system }}

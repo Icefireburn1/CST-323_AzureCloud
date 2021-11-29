@@ -1,6 +1,8 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
+
+
 name: Build and deploy PHP app to Azure Web App - justin-azure
 
 on:
@@ -26,6 +28,9 @@ jobs:
         uses: andstor/file-existence-action@v1
         with:
           files: 'composer.json'
+          
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@2.16.0
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
